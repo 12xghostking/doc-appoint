@@ -13,7 +13,7 @@ const AppointmentRequest = ({ patientName }) => {
 
   const fetchAppointmentRequests = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/requests/${patientName}`);
+      const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/requests/${patientName}`);
 
       if (response.status === 200) {
         const data = response.data;
@@ -29,7 +29,7 @@ const AppointmentRequest = ({ patientName }) => {
 
   const handleRemoveRequest = async (selectedDate) => {
   try {
-    const response = await axios.delete(`http://localhost:5000/api/appointment-requests/${patientName}/${selectedDate}`);
+    const response = await axios.delete(`https://doc-appoint-agvx.onrender.com/api/appointment-requests/${patientName}/${selectedDate}`);
 
     if (response.status === 200) {
       // Remove the request from the state
