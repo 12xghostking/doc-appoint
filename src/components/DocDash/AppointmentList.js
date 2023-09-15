@@ -9,7 +9,7 @@ const AppointmentList = ({ doctorName }) => {
     // Fetch appointments for the specified doctorName using Axios
     const fetchAppointments = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/appointments/${doctorName}`);
+        const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/appointments/${doctorName}`);
         if (response.status === 200) {
           setAppointments(response.data.appointments);
         } else {
