@@ -15,7 +15,7 @@ const CalendarComponent = ({ doctorName }) => {
   // Function to fetch appointment dates for the doctor
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/appointments/${doctorName}`);
+      const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/appointments/${doctorName}`);
       if (response.status === 200) {
         const data = response.data;
        
@@ -38,7 +38,7 @@ const CalendarComponent = ({ doctorName }) => {
   // Function to fetch unavailable dates for the doctor
   const fetchUnavailableDates = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/unavailable-dates/${doctorName}`);
+      const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/unavailable-dates/${doctorName}`);
       if (response.status === 200) {
         const data = response.data;
         
@@ -70,7 +70,7 @@ const CalendarComponent = ({ doctorName }) => {
     if (unavailableDate) {
       try {
         // Send the date as it is, assuming it's already in the correct format ("YYYY-MM-DD")
-        await axios.post(`http://localhost:5000/api/unavailable-dates/${doctorName}`, {
+        await axios.post(`https://doc-appoint-agvx.onrender.com/api/unavailable-dates/${doctorName}`, {
           date: unavailableDate,
         });
 
