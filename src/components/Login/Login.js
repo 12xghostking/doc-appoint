@@ -35,7 +35,7 @@ const LoginPage = () => {
     try {
       // Make a POST request to the appropriate login route based on the user's role (doctor or patient)
       const response = await axios.post(
-        `http://localhost:5000/api/login/${role.toLowerCase()}`, // Use 'role' directly
+        `https://doc-appoint-agvx.onrender.com/api/login/${role.toLowerCase()}`, // Use 'role' directly
         { email, password }
       );
 
