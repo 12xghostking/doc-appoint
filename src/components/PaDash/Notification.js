@@ -12,7 +12,7 @@ const Notification = ({ patientName }) => {
 
   const fetchNotifications = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/notifications/${patientName}`);
+      const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/notifications/${patientName}`);
       if (response.status === 200) {
         const data = response.data;
         setNotifications(data.notifications);
@@ -27,7 +27,7 @@ const Notification = ({ patientName }) => {
   const removeNotification = async (notificationText) => {
     
     try {
-      await axios.delete(`http://localhost:5000/api/notifications/${patientName}/${notificationText}`);
+      await axios.delete(`https://doc-appoint-agvx.onrender.com/api/notifications/${patientName}/${notificationText}`);
       // Update the state to remove the deleted notification
       setNotifications((prevNotifications) =>
         prevNotifications.filter((notification) => notification.text !== notificationText)
