@@ -16,7 +16,7 @@ const AppointmentDetails = ({ doctorName }) => {
   
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/appointments/${doctorName}`);
+      const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/appointments/${doctorName}`);
       if (response.status === 200) {
         const data = response.data;
        
@@ -42,7 +42,7 @@ const AppointmentDetails = ({ doctorName }) => {
 
   const handleChangeDate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/appointments/${doctorName}`, {
+      await axios.put(`https://doc-appoint-agvx.onrender.com/api/appointments/${doctorName}`, {
         patientName: selectedAppointment.patientName,
         currentDate: selectedAppointment.date,
         newDate,
@@ -57,7 +57,7 @@ const AppointmentDetails = ({ doctorName }) => {
 
   const handleRemoveAppointment = async (appointment) => {
     try {
-      await axios.delete(`http://localhost:5000/api/appointments/${doctorName}`, {
+      await axios.delete(`https://doc-appoint-agvx.onrender.com/api/appointments/${doctorName}`, {
         data: {
           patientName: appointment.patientName,
           date: appointment.date,
