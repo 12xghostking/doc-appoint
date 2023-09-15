@@ -22,7 +22,7 @@ const AppointmentReqPa = ({ patientName }) => {
 
   const fetchSpecialties = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/specialties');
+      const response = await axios.get('https://doc-appoint-agvx.onrender.com/api/specialties');
       if (response.status === 200) {
         const data = response.data;
         setSpecialties(data.specialties);
@@ -36,7 +36,7 @@ const AppointmentReqPa = ({ patientName }) => {
 
   const fetchLocations = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/locations');
+      const response = await axios.get('https://doc-appoint-agvx.onrender.com/api/locations');
       if (response.status === 200) {
         const data = response.data;
         setLocations(data.locations);
@@ -50,7 +50,7 @@ const AppointmentReqPa = ({ patientName }) => {
 
   const handleFindDoctors = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/find-doctors', {
+      const response = await axios.post('https://doc-appoint-agvx.onrender.com/api/find-doctors', {
         location,
         specialty,
       });
@@ -78,7 +78,7 @@ const AppointmentReqPa = ({ patientName }) => {
 
   const fetchAllDoctors = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/all-doctors');
+      const response = await axios.get('https://doc-appoint-agvx.onrender.com/api/all-doctors');
       if (response.status === 200) {
         const data = response.data;
         // Set the list of all doctors
@@ -104,7 +104,7 @@ const AppointmentReqPa = ({ patientName }) => {
 
   const handleRequestAppointment = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/appointment-requests', {
+      const response = await axios.post('https://doc-appoint-agvx.onrender.com/api/appointment-requests', {
         doctorName: selectedDoctor,
         selectedDate,
         problemDescription,
