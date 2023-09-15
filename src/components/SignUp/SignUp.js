@@ -52,7 +52,7 @@ const SignupPage = () => {
 
     try {
       // Make a POST request to the relevant sign-up route based on role
-      const response = await axios.post(`http://localhost:5000/api/signup/${formData.role.toLowerCase()}`, formData);
+      const response = await axios.post(`https://doc-appoint-agvx.onrender.com/api/signup/${formData.role.toLowerCase()}`, formData);
 
       if (response.status === 201) {
         navigate('/login');
