@@ -12,7 +12,7 @@ const AppointmentRequest = ({ doctorName }) => {
 
   const fetchAppointmentRequests = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/appointment-requests/${doctorName}`);
+      const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/appointment-requests/${doctorName}`);
       if (response.status === 200) {
         const data = response.data;
         console.log(data.appointmentRequests);
@@ -29,7 +29,7 @@ const AppointmentRequest = ({ doctorName }) => {
 const handleApproveRequest = async (request) => {
   try {
     
-    await axios.put(`http://localhost:5000/api/appointment-requests/${doctorName}/approve`, {
+    await axios.put(`https://doc-appoint-agvx.onrender.com/api/appointment-requests/${doctorName}/approve`, {
       doctorName,
       patientName: request.patientName,
       date: request.date,
@@ -45,7 +45,7 @@ const handleApproveRequest = async (request) => {
 // Update handleDenyRequest
 const handleDenyRequest = async (request) => {
   try {
-    await axios.put(`http://localhost:5000/api/appointment-requests/${doctorName}/deny`, {
+    await axios.put(`https://doc-appoint-agvx.onrender.com/api/appointment-requests/${doctorName}/deny`, {
       doctorName,
       patientName: request.patientName,
       date: request.date,
@@ -66,7 +66,7 @@ const handleRemoveRequest = async (request) => {
       prevRequests.filter((req) => req !== request)
     );
 
-    await axios.delete(`http://localhost:5000/api/appointment-requests/${doctorName}/remove`, {
+    await axios.delete(`https://doc-appoint-agvx.onrender.com/api/appointment-requests/${doctorName}/remove`, {
       data: {
         doctorName,
         patientName: request.patientName,
