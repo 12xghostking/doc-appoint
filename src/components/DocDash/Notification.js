@@ -15,7 +15,7 @@ const Notification = ({ doctorName }) => {
   // Fetch patients for the dropdown based on the doctor's name
 const fetchPatients = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/patients/${doctorName}`);
+    const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/patients/${doctorName}`);
 
     if (response.status === 200) {
       const data = response.data;
@@ -35,7 +35,7 @@ const fetchPatients = async () => {
     if (notificationText && selectedPatient) {
       try {
         // Send the notification data to the server
-        await axios.post('http://localhost:5000/api/notifications', {
+        await axios.post('https://doc-appoint-agvx.onrender.com/api/notifications', {
           doctorName: doctor, // Replace with the actual doctor name
           patientName: selectedPatient.name,
           notification: notificationText,
