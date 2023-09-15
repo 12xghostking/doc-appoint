@@ -12,7 +12,7 @@ const PatientAppointments = ({ patientName }) => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/appoint/${patientName}`);
+      const response = await axios.get(`https://doc-appoint-agvx.onrender.com/api/appoint/${patientName}`);
 
       if (response.status === 200) {
         const data = response.data;
